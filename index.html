@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开源初学者的学习导航——开源新手技术趋势与入门指导平台</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", sans-serif; }
+        body { background-color: #f5f7fa; padding: 20px; }
+        .container { max-width: 1600px; margin: 0 auto; gap: 24px; display: flex; flex-direction: column; }
+        .header { text-align: center; padding: 20px 0; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .header h1 { color: #2d3748; font-size: 28px; margin-bottom: 8px; }
+        .header p { color: #718096; font-size: 16px; }
+        .section { background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 24px; }
+        .section h2 { color: #2d3748; font-size: 20px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+        .screen-iframe-box { 
+            position: relative; 
+            width: 100%; 
+            padding-top: 62.5%; 
+            overflow: hidden;
+        }
+        .screen-iframe-box iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            border-radius: 4px;
+            transition: opacity 0.5s;
+            opacity: 0;
+        }
+        /* 加载动画 */
+        .screen-iframe-box::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #4299e1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        /* iframe加载完成后隐藏动画 */
+        .screen-iframe-box.loaded::before { display: none; }
+        .screen-iframe-box.loaded iframe { opacity: 1; }
+        .guide-link { 
+            display: inline-block; 
+            margin-top: 16px; 
+            padding: 10px 20px; 
+            background: #4299e1; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-size: 16px; 
+            transition: background 0.3s; 
+        }
+        .guide-link:hover { background: #3182ce; }
+
+        /* 加载动画关键帧 */
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        /* 响应式适配：移动端进一步放大比例，保证大屏显示效果 */
+        @media (max-width: 768px) {
+            .screen-iframe-box { padding-top: 75%; /* 4:3比例，移动端大屏更饱满 */ }
+            .header h1 { font-size: 22px; }
+            .section h2 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面头部 -->
+        <div class="header">
+            <h1>开源初学者的学习导航——开源新手技术趋势与入门指导平台</h1>
+            <p>一站式查看技术趋势、获取新手友好项目、学习入门路径</p>
+        </div>
+        <div class="section">
+            <h2>一、新手友好度排行榜</h2>
+            <div class="screen-iframe-box" id="screen1">
+                <iframe 
+                    src="https://student.dataease2.fit2cloud.com/#/de-link/xhxoOkai"
+                    allowfullscreen
+                    title="新手友好度排行榜"
+                    onload="this.parentElement.classList.add('loaded')">
+                </iframe>
+            </div>
+        </div>
+        <div class="section">
+            <h2>二、技术领域热度</h2>
+            <div class="screen-iframe-box" id="screen2">
+                <iframe 
+                    src="https://student.dataease2.fit2cloud.com/#/de-link/2anmLUwK"
+                    allowfullscreen
+                    title="技术领域热度"
+                    onload="this.parentElement.classList.add('loaded')">
+                </iframe>
+            </div>
+        </div>
+        <div class="section">
+            <h2>三、热度分布直观图</h2>
+            <div class="screen-iframe-box" id="screen3">
+                <iframe 
+                    src="https://student.dataease2.fit2cloud.com/#/de-link/StC7FMun"
+                    allowfullscreen
+                    title="热度分布直观图"
+                    onload="this.parentElement.classList.add('loaded')">
+                </iframe>
+            </div>
+        </div>
+    <div class="section">
+            <h2>四、开源项目入门路径指南</h2>
+            <p style="font-size: 16px; color: #4a5568; line-height: 1.6;">
+                基于各项目PR平均时长，整理了详细的4步入门流程，包含环境搭建、跑通Demo、代码阅读、提交PR全步骤
+            </p>
+            <a href="path_guide.md" target="_blank" class="guide-link">查看完整入门路径指南</a>
+        </div>
+    </div>
+</body>
+</html>
